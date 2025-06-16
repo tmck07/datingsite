@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Dating Website Form</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -26,10 +23,9 @@
     }
 
     fieldset {
-      background-color: #fff;
-      border: 1px solid #eee;
-      border-left: 6px solid #d63384;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      background-color: #fff8dc;
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       padding: 20px;
       margin: 0 auto 20px;
@@ -50,6 +46,11 @@
       margin-bottom: 10px;
     }
 
+    .radiocheckbox {
+      margin-right: 12px;
+      display: inline-block;
+    }
+
     .textarea {
       width: 400px;
     }
@@ -67,19 +68,6 @@
       border-radius: 6px;
       margin-bottom: 10px;
       width: 60%;
-      transition: box-shadow 0.2s ease;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    input[type="number"]:focus,
-    input[type="date"]:focus,
-    input[type="color"]:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(214, 51, 132, 0.3);
     }
 
     input[type="file"] {
@@ -96,46 +84,27 @@
       font-size: 1em;
       display: block;
       margin: 30px auto;
-      transition: background-color 0.3s ease;
     }
 
     input[type="submit"]:hover {
       background-color: #ad1457;
     }
 
-    input[type="checkbox"],
-    input[type="radio"] {
-      accent-color: #d63384;
-      transform: scale(1.1);
-      cursor: pointer;
-    }
-
-    .right {
+    .range-label {
       text-align: center;
-      background-color: purple;
+      background-color: #6f42c1;
       color: white;
-      width: 60px;
+      width: 70px;
       display: inline-block;
       vertical-align: top;
-      margin-left: 5px;
+      margin: 0 5px;
+      border-radius: 4px;
+      font-size: 0.9em;
     }
 
-    .left {
-      text-align: center;
-      background-color: darkred;
-      color: white;
-      width: 60px;
-      display: inline-block;
-      vertical-align: top;
-      margin-right: 5px;
-    }
-
-    .inline-radio-group {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      margin-bottom: 10px;
-      margin-left: 180px;
+    label:hover,
+    input:hover {
+      font-size: 15px;
     }
 
     @keyframes fadeIn {
@@ -148,6 +117,7 @@
 <body>
   <h1>Please Enter Your Details for Our Dating Website</h1>
   <form action="https://learn.nucamp.co/show_everything.php" method="POST" enctype="multipart/form-data">
+
     <fieldset>
       <legend>Your Face</legend>
       <label for="avatar">Your Image:</label>
@@ -162,16 +132,16 @@
       <input type="text" name="name" id="name" placeholder="Your full name" required><br>
 
       <label>Gender:</label>
-<div style="display: inline-block; width: 60%;">
-    <input type="radio" name="gender" id="male" value="male" required>
-    <label for="male" class="radiocheckbox">Male</label>
+      <div style="display: inline-block; width: 60%;">
+        <input type="radio" name="gender" id="male" value="male" required>
+        <label for="male" class="radiocheckbox">Male</label>
 
-    <input type="radio" name="gender" id="female" value="female" required>
-    <label for="female" class="radiocheckbox">Female</label>
+        <input type="radio" name="gender" id="female" value="female" required>
+        <label for="female" class="radiocheckbox">Female</label>
 
-    <input type="radio" name="gender" id="theythem" value="they/them" required>
-    <label for="theythem" class="radiocheckbox">They/Them</label>
-</div><br>
+        <input type="radio" name="gender" id="theythem" value="they/them" required>
+        <label for="theythem" class="radiocheckbox">They/Them</label>
+      </div><br>
 
       <label for="age">Age:</label>
       <input type="number" name="age" id="age" required><br>
@@ -197,14 +167,14 @@
     <fieldset>
       <legend>Your Indicators</legend>
       <label for="height">Height:</label>
-      <span class="left">Short</span>
+      <span class="range-label">Smol</span>
       <input type="range" name="height" id="height" min="0" max="100">
-      <span class="right">Tall</span><br>
+      <span class="range-label">Tall af</span><br>
 
       <label for="salary">Salary:</label>
-      <span class="left">Just Vibin</span>
+      <span class="range-label">Broke 💸</span>
       <input type="range" name="salary" id="salary" min="0" max="100">
-      <span class="right">Money Moves</span><br>
+      <span class="range-label">Stacked 💰</span><br>
     </fieldset>
 
     <fieldset>
@@ -230,11 +200,9 @@
       </select><br>
 
       <label>Introvert or Extrovert?</label>
-      <div class="inline-radio-group">
-        <input type="radio" name="personality" value="introvert"> Introvert
-        <input type="radio" name="personality" value="extrovert"> Extrovert
-        <input type="radio" name="personality" value="ambivert"> Ambivert
-      </div>
+      <input type="radio" name="personality" value="introvert"> Introvert
+      <input type="radio" name="personality" value="extrovert"> Extrovert
+      <input type="radio" name="personality" value="ambivert"> Ambivert<br>
     </fieldset>
 
     <fieldset>
