@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        fieldset {
+            background-color: lightyellow; border: 10px solid yellow; margin-bottom: 10px; width: 720px;}
+        label {width: 180px; display: inline-block; text-align:right; vertical-align: top;}  
+        .radiocheckbox {width:auto;}
+        .textarea {width:400px;}
+
+        .right 
+        {text-align: center; 
+        background-color: purple;
+        color: white;
+        width: 60px;
+        display: inline-block; vertical-align: top;
+        }
+        .left {text-align: center; 
+        background-color: darkred;
+        color: white;
+        width: 60px;
+        display: inline-block; vertical-align: top;
+        }
+        label:hover{font-size:15px}
+        input:hover{font-size: 15px;}
+
+        </style>
+    </head>
+    <body>
+        <h1>Please Enter Your Details For Out Dating Website</h1>
+        <form action="https://learn.nucamp.co/show_everything.php"method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your Face</legend>
+            <label for="avatar"> Your Image:</label>           
+                 <input type="file" name="avatar" id="https://url.nucamp.co/datingjs" [required]><br>
+                 <label for="preview">Image Preview:</label>
+                 <img id="preview" name="preview" width="50px"> 
+        </fieldset> <br>
+        <fieldset>
+            <legend>Your General Details</legend>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="Your full name" required><br>
+            <label>Gender:</label>
+                <input type="radio" name="gender" id="male" value="male" required><label for="Male" class="radiocheckbox"> Male </label>
+                <input type="radio" name="gender" id="female" value="female" required><label for="Female" class="radiocheckbox"> Female</label><br>
+            <label for ="age">Age: </label><input type="number" name="age" required><br>
+            <label for="dob">Date of Birth: </label><input type="date" name="dob" id="dob" required><br>
+            <label for="color">Favorite Color: </label><input type="color" name="color" id="color"><br>
+            <label for="country">Which country:</label>
+            <select name="country">
+                <option value=""> </option>
+                <option value="can">Canada </option>
+                <option value="br">Brazil </option>
+                <option value="cn">China </option>
+                <option value="mx">Mexico </option>
+                <option value="us">United States </option>
+                <option value="uk">United Kingdom </option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Your Indicators</legend>
+            <label for="height">Height: </label><span class="left"> Short</span><input type="range" name="height" id="height" min="0" max="100"><span class="right"> Tall</span><br>
+            <label for="salary">Salary: </label><span class="left"> Poor</span><input type="range" name="salary" id="salary" min="0" max="100"><span class="right"> Rich</span><br>
+        </fieldset>
+        <fieldset>
+            <legend>Your Contact Information</legend>
+            <label for="Email">  Email:</label><input type="email" name="email" id="email" required><br>
+            <label for="Mobile"> Mobile:</label><input type="tel" name=mobile id="mobile"><br>
+            <label for="Address">Address:</label><textarea rows="3" cols=20 name="address" id="address" class="textarea"></textarea><br>
+            <label for="Method to contact you">Method to contact you </label>
+            <input type="checkbox" name="email" value="email">Email
+            <input type="checkbox" name="whatsapp" value="whatsapp"> Whatsapp
+            <input type="checkbox" name="In-app chat" value="In-app chat"> In-app chat <br>
+        </fieldset>
+        <input type="Submit">
+    </form>
+    <script src="https://url.nucamp.co/datingjs"></script>
+    </body>
+</html>
