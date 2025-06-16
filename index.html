@@ -1,283 +1,309 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Dating Website Form</title>
+  <meta charset="UTF-8">
+  <title>Dating Website Form</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ffe6f0, #e6f0ff);
-            color: #333;
-            padding: 40px;
-        }
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #e6f0ff);
+      color: #333;
+      padding: 40px;
+    }
 
-        h1 {
-            text-align: center;
-            color: #d63384;
-            margin-bottom: 40px;
-        }
+    h1 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 40px;
+    }
 
-        form {
-            animation: fadeIn 1.2s ease-in;
-        }
+    form {
+      animation: fadeIn 1.2s ease-in;
+    }
 
-        fieldset {
-            background-color: #fff8dc;
-            border: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 0 auto 20px;
-            width: 720px;
-        }
+    fieldset {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-left: 6px solid #d63384;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 0 auto 20px;
+      width: 720px;
+    }
 
-        legend {
-            font-weight: bold;
-            color: #d63384;
-            font-size: 1.2em;
-        }
+    legend {
+      font-weight: bold;
+      color: #d63384;
+      font-size: 1.2em;
+    }
 
-        label {
-            width: 180px;
-            display: inline-block;
-            text-align: right;
-            vertical-align: top;
-            margin-bottom: 10px;
-        }
+    label {
+      width: 180px;
+      display: inline-block;
+      text-align: right;
+      vertical-align: top;
+      margin-bottom: 10px;
+    }
 
-        .radiocheckbox {
-            width: auto;
-            margin-left: 5px;
-        }
+    .textarea {
+      width: 400px;
+    }
 
-        .textarea {
-            width: 400px;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    input[type="color"],
+    select,
+    textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      width: 60%;
+      transition: box-shadow 0.2s ease;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="number"],
-        input[type="date"],
-        input[type="color"],
-        select,
-        textarea {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            width: 60%;
-        }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    input[type="color"]:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(214, 51, 132, 0.3);
+    }
 
-        input[type="file"] {
-            border: none;
-        }
+    input[type="file"] {
+      border: none;
+    }
 
-        input[type="submit"] {
-            background-color: #d63384;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            display: block;
-            margin: 30px auto;
-        }
+    input[type="submit"] {
+      background-color: #d63384;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      display: block;
+      margin: 30px auto;
+      transition: background-color 0.3s ease;
+    }
 
-        input[type="submit"]:hover {
-            background-color: #ad1457;
-        }
+    input[type="submit"]:hover {
+      background-color: #ad1457;
+    }
 
-        .right {
-            text-align: center;
-            background-color: purple;
-            color: white;
-            width: 60px;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 5px;
-        }
+    input[type="checkbox"],
+    input[type="radio"] {
+      accent-color: #d63384;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
 
-        .left {
-            text-align: center;
-            background-color: darkred;
-            color: white;
-            width: 60px;
-            display: inline-block;
-            vertical-align: top;
-            margin-right: 5px;
-        }
+    .right {
+      text-align: center;
+      background-color: purple;
+      color: white;
+      width: 60px;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 5px;
+    }
 
-        label:hover,
-        input:hover {
-            font-size: 15px;
-        }
+    .left {
+      text-align: center;
+      background-color: darkred;
+      color: white;
+      width: 60px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 5px;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    .inline-radio-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 10px;
+      margin-left: 180px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
-    <h1>Please Enter Your Details for Our Dating Website</h1>
-    <form action="https://learn.nucamp.co/show_everything.php" method="POST" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Your Face</legend>
-            <label for="avatar">Your Image:</label>
-            <input type="file" name="avatar" id="avatar" required><br>
-            <label for="preview">Image Preview:</label>
-            <img id="preview" name="preview" width="50px">
-        </fieldset>
+  <h1>Please Enter Your Details for Our Dating Website</h1>
+  <form action="https://learn.nucamp.co/show_everything.php" method="POST" enctype="multipart/form-data">
+    <fieldset>
+      <legend>Your Face</legend>
+      <label for="avatar">Your Image:</label>
+      <input type="file" name="avatar" id="avatar" required><br>
+      <label for="preview">Image Preview:</label>
+      <img id="preview" name="preview" width="50px">
+    </fieldset>
 
-        <fieldset>
-            <legend>Your General Details</legend>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" placeholder="Your full name" required><br>
+    <fieldset>
+      <legend>Your General Details</legend>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" placeholder="Your full name" required><br>
 
-            <label>Gender:</label>
-            <input type="radio" name="gender" id="male" value="male" required>
-            <label for="male" class="radiocheckbox">Male</label>
-            <input type="radio" name="gender" id="female" value="female" required>
-            <label for="female" class="radiocheckbox">Female</label><br>
-            <input type="radio" name="gender" id="they/them" value="they/them" required>
-            <label for="they/them" class="radiocheckbox">They/Them</label>
-            <label for="age">Age:</label>
-            <input type="number" name="age" id="age" required><br>
+      <label>Gender:</label>
+      <div class="inline-radio-group">
+        <input type="radio" name="gender" id="male" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" required>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="they" value="they/them" required>
+        <label for="they">They/Them</label>
+      </div>
 
-            <label for="dob">Date of Birth:</label>
-            <input type="date" name="dob" id="dob" required><br>
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" required><br>
 
-            <label for="color">Favorite Color:</label>
-            <input type="color" name="color" id="color"><br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" name="dob" id="dob" required><br>
 
-            <label for="country">Which Country:</label>
-            <select name="country" id="country">
-                <option value=""></option>
-                <option value="can">Canada</option>
-                <option value="br">Brazil</option>
-                <option value="cn">China</option>
-                <option value="mx">Mexico</option>
-                <option value="us">United States</option>
-                <option value="uk">United Kingdom</option>
-            </select>
-        </fieldset>
+      <label for="color">Favorite Color:</label>
+      <input type="color" name="color" id="color"><br>
 
-        <fieldset>
-            <legend>Your Indicators</legend>
-            <label for="height">Height:</label>
-            <span class="left">Short</span>
-            <input type="range" name="height" id="height" min="0" max="100">
-            <span class="right">Tall</span><br>
+      <label for="country">Which Country:</label>
+      <select name="country" id="country">
+        <option value=""></option>
+        <option value="can">Canada</option>
+        <option value="br">Brazil</option>
+        <option value="cn">China</option>
+        <option value="mx">Mexico</option>
+        <option value="us">United States</option>
+        <option value="uk">United Kingdom</option>
+      </select>
+    </fieldset>
 
-            <label for="salary">Salary:</label>
-            <span class="left">Poor</span>
-            <input type="range" name="salary" id="salary" min="0" max="100">
-            <span class="right">Rich</span><br>
-        </fieldset>
-        <fieldset>
-            <legend>Your Personality</legend>
-            <label for="hobbies">Hobbies & Interests:</label>
-           <textarea id="hobbies" name="hobbies" rows="3" cols="30"></textarea><br>
+    <fieldset>
+      <legend>Your Indicators</legend>
+      <label for="height">Height:</label>
+      <span class="left">Short</span>
+      <input type="range" name="height" id="height" min="0" max="100">
+      <span class="right">Tall</span><br>
 
-  <label for="zodiac">Zodiac Sign:</label>
-  <select id="zodiac" name="zodiac">
-    <option value="">--Select--</option>
-    <option value="aries">Aries</option>
-    <option value="taurus">Taurus</option>
-    <option value="gemini">Gemini</option>
-    <option value="cancer">Cancer</option>
-    <option value="leo">Leo</option>
-    <option value="virgo">Virgo</option>
-    <option value="libra">Libra</option>
-    <option value="scorpio">Scorpio</option>
-    <option value="sagittarius">Sagittarius</option>
-    <option value="capricorn">Capricorn</option>
-    <option value="aquarius">Aquarius</option>
-    <option value="pisces">Pisces</option>
-  </select><br>
+      <label for="salary">Salary:</label>
+      <span class="left">Just Vibin</span>
+      <input type="range" name="salary" id="salary" min="0" max="100">
+      <span class="right">Money Moves</span><br>
+    </fieldset>
 
-  <label>Introvert or Extrovert?</label>
-  <input type="radio" name="personality" value="introvert"> Introvert
-  <input type="radio" name="personality" value="extrovert"> Extrovert
-  <input type="radio" name="personality" value="ambivert"> Ambivert<br>
-</fieldset>
+    <fieldset>
+      <legend>Your Personality</legend>
+      <label for="hobbies">Hobbies & Interests:</label>
+      <textarea id="hobbies" name="hobbies" rows="3" cols="30"></textarea><br>
 
-<fieldset>
-  <legend>Partner Preferences</legend>
-  <label for="partner-age">Preferred Age Range:</label>
-  <input type="number" name="partner-age-min" placeholder="Min" style="width: 60px;">
-  -
-  <input type="number" name="partner-age-max" placeholder="Max" style="width: 60px;"><br>
+      <label for="zodiac">Zodiac Sign:</label>
+      <select id="zodiac" name="zodiac">
+        <option value="">--Select--</option>
+        <option value="aries">Aries</option>
+        <option value="taurus">Taurus</option>
+        <option value="gemini">Gemini</option>
+        <option value="cancer">Cancer</option>
+        <option value="leo">Leo</option>
+        <option value="virgo">Virgo</option>
+        <option value="libra">Libra</option>
+        <option value="scorpio">Scorpio</option>
+        <option value="sagittarius">Sagittarius</option>
+        <option value="capricorn">Capricorn</option>
+        <option value="aquarius">Aquarius</option>
+        <option value="pisces">Pisces</option>
+      </select><br>
 
-  <label for="traits">Top 3 Traits You Value:</label>
-  <input type="checkbox" name="traits" value="kindness"> Kindness
-  <input type="checkbox" name="traits" value="humor"> Humor
-  <input type="checkbox" name="traits" value="intelligence"> Intelligence
-  <input type="checkbox" name="traits" value="ambition"> Ambition
-  <input type="checkbox" name="traits" value="loyalty"> Loyalty<br>
-</fieldset>
+      <label>Introvert or Extrovert?</label>
+      <div class="inline-radio-group">
+        <input type="radio" name="personality" value="introvert"> Introvert
+        <input type="radio" name="personality" value="extrovert"> Extrovert
+        <input type="radio" name="personality" value="ambivert"> Ambivert
+      </div>
+    </fieldset>
 
-<fieldset>
-  <legend>Your Lifestyle</legend>
-  <label for="pets">Do you have pets?</label>
-  <input type="radio" name="pets" value="yes"> Yes
-  <input type="radio" name="pets" value="no"> No<br>
+    <fieldset>
+      <legend>Partner Preferences</legend>
+      <label for="partner-age">Preferred Age Range:</label>
+      <input type="number" name="partner-age-min" placeholder="Min" style="width: 60px;">
+      -
+      <input type="number" name="partner-age-max" placeholder="Max" style="width: 60px;"><br>
 
-  <label for="smoke">Do you smoke?</label>
-  <input type="radio" name="smoke" value="yes"> Yes
-  <input type="radio" name="smoke" value="no"> No<br>
+      <label for="traits">Top 3 Traits You Value:</label>
+      <input type="checkbox" name="traits" value="kindness"> Kindness
+      <input type="checkbox" name="traits" value="humor"> Humor
+      <input type="checkbox" name="traits" value="intelligence"> Intelligence
+      <input type="checkbox" name="traits" value="ambition"> Ambition
+      <input type="checkbox" name="traits" value="loyalty"> Loyalty<br>
+    </fieldset>
 
-  <label for="music">Favorite Music Genre:</label>
-  <select name="music" id="music">
-    <option value="">--Select--</option>
-    <option value="pop">Pop</option>
-    <option value="rock">Rock</option>
-    <option value="hiphop">Hip Hop</option>
-    <option value="country">Country</option>
-    <option value="jazz">Jazz</option>
-    <option value="edm">EDM</option>
-  </select><br>
-</fieldset>
+    <fieldset>
+      <legend>Your Lifestyle</legend>
+      <label for="pets">Do you have pets?</label>
+      <input type="radio" name="pets" value="yes"> Yes
+      <input type="radio" name="pets" value="no"> No<br>
 
-<fieldset>
-  <legend>Fun Icebreakers</legend>
-  <label for="icebreaker">Your go-to karaoke song:</label>
-  <input type="text" name="karaoke" id="icebreaker"><br>
+      <label for="smoke">Do you smoke?</label>
+      <input type="radio" name="smoke" value="yes"> Yes
+      <input type="radio" name="smoke" value="no"> No<br>
 
-  <label for="superpower">If you had a superpower:</label>
-  <input type="text" name="superpower" id="superpower"><br>
+      <label for="music">Favorite Music Genre:</label>
+      <select name="music" id="music">
+        <option value="">--Select--</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="hiphop">Hip Hop</option>
+        <option value="country">Country</option>
+        <option value="jazz">Jazz</option>
+        <option value="edm">EDM</option>
+      </select><br>
+    </fieldset>
 
-  <label for="bucketlist">Bucket List Item:</label>
-  <textarea name="bucketlist" id="bucketlist" rows="2" cols="30"></textarea><br>
-</fieldset>
+    <fieldset>
+      <legend>Fun Icebreakers</legend>
+      <label for="icebreaker">Your go-to karaoke song:</label>
+      <input type="text" name="karaoke" id="icebreaker"><br>
 
-        <fieldset>
-            <legend>Your Contact Information</legend>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required><br>
+      <label for="superpower">If you had a superpower:</label>
+      <input type="text" name="superpower" id="superpower"><br>
 
-            <label for="mobile">Mobile:</label>
-            <input type="tel" name="mobile" id="mobile"><br>
+      <label for="bucketlist">Bucket List Item:</label>
+      <textarea name="bucketlist" id="bucketlist" rows="2" cols="30"></textarea><br>
+    </fieldset>
 
-            <label for="address">Address:</label>
-            <textarea rows="3" cols="20" name="address" id="address" class="textarea"></textarea><br>
+    <fieldset>
+      <legend>Your Contact Information</legend>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required><br>
 
-            <label>Preferred Contact:</label>
-            <input type="checkbox" name="emailcontact" value="email"> Email
-            <input type="checkbox" name="whatsapp" value="whatsapp"> Whatsapp
-            <input type="checkbox" name="chat" value="chat"> In-app Chat<br>
-        </fieldset>
+      <label for="mobile">Mobile:</label>
+      <input type="tel" name="mobile" id="mobile"><br>
 
-        <input type="submit" value="Submit">
-    </form>
+      <label for="address">Address:</label>
+      <textarea rows="3" cols="20" name="address" id="address" class="textarea"></textarea><br>
 
-    <script src="https://url.nucamp.co/datingjs"></script>
+      <label>Preferred Contact:</label>
+      <input type="checkbox" name="emailcontact" value="email"> Email
+      <input type="checkbox" name="whatsapp" value="whatsapp"> Whatsapp
+      <input type="checkbox" name="chat" value="chat"> In-app Chat<br>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script src="https://url.nucamp.co/datingjs"></script>
 </body>
 </html>
