@@ -162,14 +162,16 @@
       <input type="text" name="name" id="name" placeholder="Your full name" required><br>
 
       <label>Gender:</label>
-      <div class="inline-radio-group">
-        <input type="radio" name="gender" id="male" value="male" required>
-        <label for="male">Male</label>
-        <input type="radio" name="gender" id="female" value="female" required>
-        <label for="female">Female</label>
-        <input type="radio" name="gender" id="they" value="they/them" required>
-        <label for="they">They/Them</label>
-      </div>
+<div style="display: inline-block; width: 60%;">
+    <input type="radio" name="gender" id="male" value="male" required>
+    <label for="male" class="radiocheckbox">Male</label>
+
+    <input type="radio" name="gender" id="female" value="female" required>
+    <label for="female" class="radiocheckbox">Female</label>
+
+    <input type="radio" name="gender" id="theythem" value="they/them" required>
+    <label for="theythem" class="radiocheckbox">They/Them</label>
+</div><br>
 
       <label for="age">Age:</label>
       <input type="number" name="age" id="age" required><br>
