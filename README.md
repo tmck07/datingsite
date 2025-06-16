@@ -15,4 +15,4 @@ A playful and responsive HTML form for a fictional dating website. This project 
 
 1. **Download or Clone this repo:**
    ```bash
-   git clone https://github.com/tmck07/datingsite
+   git clone https://github.com/tmck07/datingsite/README
